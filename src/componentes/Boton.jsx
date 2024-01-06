@@ -1,10 +1,10 @@
 import "./Boton.css";
 
-export const Boton = (props) => {
+export const Boton = ({letra, audio}) => {
+  const sound = new Audio(audio);
   const sonar = () => {
-    var audio = new Audio(props.audio);
-    audio.play();
+    sound.play();
   };
 
-  return <button onClick={sonar}>{props.letra}</button>;
+  return <button onClick={sonar}>{letra}</button>;
 };
